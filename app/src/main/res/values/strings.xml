@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Diccionario</string>
+
+    <string name="search_hint">Busca palabras</string>
+    <string name="search">Buscar</string>
+    <string name="favs">Favoritos</string>
+    <string name="history">Historial</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_info_message">Por una lengua libre de privatizaciones</string>
+    <string name="internet_error">Comprueba tu conexión a internet</string>
+    <string name="add_fav_text">Añadir favorito</string>
+    <string name="remove_fav_text">Quitar favorito</string>
+    <string name="clear_history">Limpiar historial</string>
+    <string name="remove_fac_cont_menu">Eliminar favorito</string>
+    <string name="app_version">0.9.1</string>
+    <string name="about_msg">Este diccionario pretende ser una alternativa a la app oficial de la RAE.\n\nPor otro lado sirve como una herramienta para
+    protestar contra la privatización del lenguaje que está siendo llevada a cabo por ellos. \n\nPara más información visita https://freespanish.github.io/Diccionario .
+    </string>
+</resources>

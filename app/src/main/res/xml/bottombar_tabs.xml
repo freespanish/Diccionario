@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_search"
+        icon="@drawable/ic_search_black_24dp"
+        barColorWhenSelected="@color/searchTabColor"
+        title="@string/search"/>
+    <tab
+        id="@+id/tab_fav"
+        icon="@drawable/ic_favorite_black_24dp"
+        barColorWhenSelected="@color/favTabColor"
+        title="@string/favs"/>
+    <tab
+        id="@+id/tab_history"
+        icon="@drawable/ic_history_black_24dp"
+        barColorWhenSelected="@color/historyTabColor"
+        title="@string/history"/>
+</tabs>

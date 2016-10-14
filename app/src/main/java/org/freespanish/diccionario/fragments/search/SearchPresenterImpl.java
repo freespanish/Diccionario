@@ -1,0 +1,68 @@
+package org.freespanish.diccionario.fragments.search;
+
+import android.content.Context;
+import android.view.View;
+
+import org.freespanish.diccionario.database.models.Definition;
+
+/**
+ *    This file is part of Diccionario.
+ *
+ *    Diccionario is free software: you can redistribute it and/or modify
+ *    it under the terms of the GNU General Public License as published by
+ *    the Free Software Foundation, either version 3 of the License, or
+ *    (at your option) any later version.
+ *
+ *    Foobar is distributed in the hope that it will be useful,
+ *    but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *    GNU General Public License for more details.
+ *
+ *    You should have received a copy of the GNU General Public License
+ *    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+public class SearchPresenterImpl implements SearchPresenter, SearchInteractorImpl.OnDefinitionRetrievedListener {
+
+    private SearchFragmentView searchFragmentView;
+    private SearchInteractor searchInteractor;
+
+    public SearchPresenterImpl(SearchFragmentView searchFragmentView) {
+        this.searchFragmentView = searchFragmentView;
+        this.searchInteractor = new SearchInteractorImpl();
+    }
+
+    @Override
+    public void onDestroy() {
+        this.searchFragmentView = null;
+    }
+
+    @Override
+    public void prepareDefinition(String word, boolean isAnId) {
+        this.searchFragmentView.setProgressBarVisibility(View.VISIBLE);
+        this.searchInteractor.getDefinition(this, word, isAnId);
+    }
+
+    @Override
+    public void notifyDefinitionToStore(Definition definition, Context context) {
+        this.searchInteractor.storeDefinition(definition, context);
+    }
+
+    @Override
+    public Definition notifyDefinitionToRetrieve(String query, String matchQuery, Context context) {
+        return this.searchInteractor.retrieveDefinition(query, matchQuery, context);
+    }
+
+
+    @Override
+    public void onDefinitionReceived(String htmlContent) {
+        if (searchFragmentView != null)
+            this.searchFragmentView.populateWebView(htmlContent);
+    }
+
+    @Override
+    public void onDefinitionReceivedError() {
+        if (searchFragmentView != null)
+            this.searchFragmentView.handleError();
+    }
+}
