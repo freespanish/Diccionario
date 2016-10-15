@@ -49,14 +49,7 @@ public class SearchInteractorImpl implements SearchInteractor {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                String htmlContent = response.body().string()
-                        .replace("/css/dile.css.pagespeed.ce.3ZIszsKm5U.css", "file:///android_asset/style.css")
-                        .replace("Real Academia Espa&#x00F1;ola &copy; Todos los derechos reservados",
-                                "Luchemos contra la RAE por una cultura libre.")
-                        .replace("<ul>", "<h2>Quizá quieres decir...</h2><ul>")
-                        .replace(" ◆ ", "<br>")
-                        .replaceAll(Constants.REGEX_REMOVE_SCRIPTS, "");
-                onDefinitionRetrievedListener.onDefinitionReceived(htmlContent);
+                onDefinitionRetrievedListener.onDefinitionReceived(response.body().string());
             }
 
             @Override

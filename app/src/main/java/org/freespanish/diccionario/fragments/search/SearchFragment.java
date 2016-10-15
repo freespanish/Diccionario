@@ -253,7 +253,9 @@ public class SearchFragment extends Fragment implements SearchFragmentView {
         this.currentWord = RegExUtils.getStringFromRegex(htmlContent, Constants.REGEX_GET_HEADER)
                 .replaceAll(Constants.REGEX_REMOVE_SUPS, "")
                 .replaceAll(Constants.REGEX_REMOVE_COMMAS, "")
-                .replace(".", "");
+                .replace(".", "")
+                .replace("</i>", "")
+                .replace("<i>", "");
 
         if (this.currentWord.length() > 0) {
             menu.findItem(R.id.action_fav).setVisible(true);

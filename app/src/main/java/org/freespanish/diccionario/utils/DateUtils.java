@@ -23,7 +23,7 @@ import java.util.Locale;
 
 public class DateUtils {
 
-    public static String SIMPLE_DATE_FORMAT = "dd/MM/yyyy 'a las' HH:mm:ss";
+    public static String SIMPLE_DATE_FORMAT = "dd/MM/yyyy 'a la(s)' HH:mm:ss";
 
     public static String getDate(long milliSeconds, String dateFormat) {
         // Create a DateFormatter object for displaying date in specified format.

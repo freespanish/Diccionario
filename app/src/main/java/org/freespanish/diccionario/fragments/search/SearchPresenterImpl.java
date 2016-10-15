@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.View;
 
 import org.freespanish.diccionario.database.models.Definition;
+import org.freespanish.diccionario.utils.Constants;
 
 /**
  *    This file is part of Diccionario.
@@ -56,8 +57,16 @@ public class SearchPresenterImpl implements SearchPresenter, SearchInteractorImp
 
     @Override
     public void onDefinitionReceived(String htmlContent) {
-        if (searchFragmentView != null)
+        if (searchFragmentView != null) {
+            htmlContent = htmlContent
+                    .replace("/css/dile.css.pagespeed.ce.3ZIszsKm5U.css", "file:///android_asset/style.css")
+                    .replace("Real Academia Espa&#x00F1;ola &copy; Todos los derechos reservados",
+                            "Luchemos contra la RAE por una cultura libre.")
+                    .replace("<ul>", "<h2>Quizá quieres decir...</h2><ul>")
+                    .replace(" ◆ ", "<br>")
+                    .replaceAll(Constants.REGEX_REMOVE_SCRIPTS, "");
             this.searchFragmentView.populateWebView(htmlContent);
+        }
     }
 
     @Override
