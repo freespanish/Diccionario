@@ -10,8 +10,6 @@ import org.freespanish.diccionario.database.DiccionarioDBHelper;
 import org.freespanish.diccionario.database.models.Definition;
 import org.freespanish.diccionario.utils.Constants;
 import org.freespanish.diccionario.utils.InternetUtils;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
