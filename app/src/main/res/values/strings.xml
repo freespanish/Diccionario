@@ -13,7 +13,7 @@
     <string name="remove_fav_text">Quitar favorito</string>
     <string name="clear_history">Limpiar historial</string>
     <string name="remove_fac_cont_menu">Eliminar favorito</string>
-    <string name="app_version">0.9.2</string>
+    <string name="app_version">0.9.3</string>
     <string name="about_msg">Este diccionario pretende ser una alternativa a la app oficial de la RAE.\n\nPor otro lado sirve como una herramienta para
     protestar contra la privatización del lenguaje que está siendo llevada a cabo por ellos. \n\nPara más información visita https://freespanish.github.io/Diccionario .
     </string>

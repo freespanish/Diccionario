@@ -1,10 +1,11 @@
-package org.freespanish.diccionario.fragments.history;
+package org.freespanish.diccionario.utils;
 
-import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 
-import org.freespanish.diccionario.database.models.Definition;
+import org.freespanish.diccionario.DiccionarioApp;
 
-import java.util.ArrayList;
+import static android.content.Context.CONNECTIVITY_SERVICE;
 
 /**
  *    This file is part of Diccionario.
@@ -23,8 +24,11 @@ import java.util.ArrayList;
  *    along with Diccionario.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public interface HistoryPresenter {
-    ArrayList<Definition> notifyRetrieveHistory(Context context);
-    void notifyClearHistory(Context context);
-    void onDestroy();
+public class InternetUtils {
+
+    public static boolean isInternetAvailable() {
+        NetworkInfo ni = ((ConnectivityManager) DiccionarioApp.getAppContext().
+                getSystemService(CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
+        return ni != null && ni.isConnected() && ni.isAvailable();
+    }
 }

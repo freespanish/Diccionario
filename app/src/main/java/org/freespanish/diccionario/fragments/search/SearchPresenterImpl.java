@@ -14,13 +14,13 @@ import org.freespanish.diccionario.utils.Constants;
  *    the Free Software Foundation, either version 3 of the License, or
  *    (at your option) any later version.
  *
- *    Foobar is distributed in the hope that it will be useful,
+ *    Diccionario is distributed in the hope that it will be useful,
  *    but WITHOUT ANY WARRANTY; without even the implied warranty of
  *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *    GNU General Public License for more details.
  *
  *    You should have received a copy of the GNU General Public License
- *    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ *    along with Diccionario.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 public class SearchPresenterImpl implements SearchPresenter, SearchInteractorImpl.OnDefinitionRetrievedListener {
@@ -60,7 +60,7 @@ public class SearchPresenterImpl implements SearchPresenter, SearchInteractorImp
         if (searchFragmentView != null) {
             htmlContent = htmlContent
                     .replace("/css/dile.css.pagespeed.ce.3ZIszsKm5U.css", "file:///android_asset/style.css")
-                    .replace("Real Academia Espa&#x00F1;ola &copy; Todos los derechos reservados",
+                    .replace("Real Academia Española © Todos los derechos reservados",
                             "Luchemos contra la RAE por una cultura libre.")
                     .replace("<ul>", "<h2>Quizá quieres decir...</h2><ul>")
                     .replace(" ◆ ", "<br>")
