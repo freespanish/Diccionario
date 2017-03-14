@@ -130,7 +130,7 @@ public class HistoryFragment extends Fragment implements HistoryView {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == item.getItemId()) {
+        if (item.getItemId() == R.id.action_clear_history) {
             this.historyPresenter.notifyClearHistory(getActivity());
             explosionField.explode(historyRecyclerView);
             ((HistoryAdapter)historyRecyclerView.getAdapter()).removeAll();
